@@ -1,40 +1,24 @@
-networks:
-  php_pro:
-    driver: bridge
-
-volumes:
-  database_volume:
-    driver: local
+version: '3'
 
 services:
-  app:
-    image: 'php:8.3-apache'
-    restart: always
-    ports:
-      - 8081:80
+  apache-php:
+    build: ./php
     volumes:
-      - .:/var/www/html
-    networks:
-      - php_pro
+      - ./:/var/www/html/
+      - ./php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    links:
+      - mysql
 
   mysql:
-    image: 'mysql:8'
-    restart: always
-    ports:
-      - '3306:3306'
+    image: mysql:8.0
     volumes:
-      - 'database_volume:/var/lib/mysql'
-    environment:
-      MYSQL_ROOT_PASSWORD: qp8vmzjf
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: besha2vox
-      MYSQL_PASSWORD: qwerty
-    networks:
-      - php_pro
-  adminer:
-    image: 'adminer'
-    restart: always
+      - ./mysql:/var/mysql
     ports:
-      - 8080:8080
-    networks:
-      - php_pro
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db
