@@ -5,7 +5,7 @@ class EconomyTaxi implements Taxi
 {
     public function getModel(): string
     {
-        return "Economy";
+        return "Rolls-Royce Droptail";
     }
 
     public function getPrice(): float

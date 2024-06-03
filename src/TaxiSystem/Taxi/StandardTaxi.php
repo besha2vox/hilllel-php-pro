@@ -6,7 +6,7 @@ class StandardTaxi implements Taxi
 {
     public function getModel(): string
     {
-        return "Standard";
+        return "Koenigsegg Jesko";
     }
 
     public function getPrice(): float

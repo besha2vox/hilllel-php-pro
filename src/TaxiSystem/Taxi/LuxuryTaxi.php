@@ -6,7 +6,7 @@ class LuxuryTaxi implements Taxi
 {
     public function getModel(): string
     {
-        return "Luxury";
+        return "Daewoo Lanos";
     }
 
     public function getPrice(): float
