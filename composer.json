@@ -1,0 +1,16 @@
+{
+  "name": "besha2vox/hilllel-php-pro",
+  "type": "education",
+  "autoload": {
+    "psr-4": {
+      "Classes\\": "src/Classes"
+    }
+  },
+  "authors": [
+    {
+      "name": "Serhii Revva",
+      "email": "besha2vox@gmail.com"
+    }
+  ],
+  "require": {}
+}
