@@ -3,7 +3,7 @@
     "type": "education",
     "autoload": {
         "psr-4": {
-            "Classes\\": "src/Classes"
+            "TaxiSystem\\": "src/TaxiSystem"
         }
     },
     "authors": [
